@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,100:1a1a1a&height=140&section=header&text=Victhor%20Loiola&fontSize=44&fontColor=ffffff&fontAlign=50&fontAlignY=42&desc=Software%20Engineer%20%7C%20Java%20%26%20Go%20%7C%20Back-End%2C%20Cloud%20%26%20DevOps&descSize=16&descAlignY=70&descAlign=50" width="100%" alt="Victhor Loiola, Software Engineer"/>
+<img src="./assets/banner.svg" width="100%" alt="Victhor Loiola, Software Engineer | Java &amp; Go | Back-End, Cloud &amp; DevOps"/>
 
 <a href="https://github.com/victhor-loiola">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&duration=2800&pause=900&color=FFFFFF&center=true&vCenter=true&width=640&lines=%24+whoami;Back-End+Engineer+%7C+Java+%26+Go;Distributed+systems+%C2%B7+Cloud+%C2%B7+DevOps;Building+scalable+and+reliable+software" alt="Typing SVG"/>
@@ -92,7 +92,6 @@ I'm a computing enthusiast focused on the advanced side of Software Engineering:
 <img height="165" src="https://github-readme-stats.vercel.app/api?username=victhor-loiola&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=ffffff&text_color=c9d1d9&icon_color=ffffff&rank_icon=github" alt="GitHub stats"/>
 <img height="165" src="https://streak-stats.demolab.com?user=victhor-loiola&hide_border=true&background=0D1117&ring=FFFFFF&fire=FFFFFF&currStreakLabel=FFFFFF&sideLabels=C9D1D9&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E&stroke=30363D" alt="GitHub streak"/>
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=victhor-loiola&bg_color=0d1117&color=c9d1d9&line=ffffff&point=ffffff&area=true&area_color=ffffff&hide_border=true&title_color=ffffff&custom_title=Contribution%20activity" alt="Contribution activity graph"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/victhor-loiola/victhor-loiola/output/snake-dark.svg"/>
@@ -102,4 +101,3 @@ I'm a computing enthusiast focused on the advanced side of Software Engineering:
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:000000&height=40&section=footer" width="100%" alt=""/>
