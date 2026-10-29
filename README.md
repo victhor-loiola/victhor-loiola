@@ -51,7 +51,6 @@ flowchart LR
 | :-- | :-- | :-- | :-- |
 | [**delivery-ai-assistant**](https://github.com/victhor-loiola/delivery-ai-assistant) | Ordering assistant: LLM agent with tool calling over the delivery-ai APIs | Python · LLM · Tool calling · Docker | ![building](https://img.shields.io/badge/status-building-ffffff?style=flat-square&labelColor=000000) |
 | [**delivery-ai**](https://github.com/victhor-loiola/delivery-ai) | Delivery platform with 6 Spring Boot services, **ML route intelligence**, API Gateway, transactional outbox, idempotent consumers with retry/DLQ and JWT (RS256 + JWKS) | Java 21 · Spring Boot · ML · RabbitMQ · PostgreSQL · Docker · GitHub Actions | ![v1](https://img.shields.io/badge/v1-released-ffffff?style=flat-square&labelColor=000000) |
-| [**ticket-ops**](https://github.com/victhor-loiola/ticket-ops) | High-concurrency event ticketing platform: saga, outbox, Redis seat locking and full observability | Go · Kafka · Redis · Kubernetes · AWS Lambda · Terraform | ![building](https://img.shields.io/badge/status-building-ffffff?style=flat-square&labelColor=000000) |
 | [**finance-control**](https://github.com/victhor-loiola/finance-control) | Personal finance REST API | Java · Spring Boot · PostgreSQL | ![done](https://img.shields.io/badge/status-done-ffffff?style=flat-square&labelColor=000000) |
 
 ---
