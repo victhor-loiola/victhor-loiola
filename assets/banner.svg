@@ -18,6 +18,6 @@
   <!-- Conteúdo -->
   <text x="40" y="80" class="mono" font-size="18" fill="#8b949e">victhor@debian:~$ <tspan fill="#ffffff">whoami</tspan></text>
   <text x="40" y="132" class="mono" font-size="44" font-weight="700" fill="#ffffff">Victhor Loiola</text>
-  <text x="40" y="170" class="mono" font-size="18" fill="#c9d1d9">Software Engineer | Java &amp; Go | Back-End, Cloud &amp; DevOps</text>
+  <text x="40" y="170" class="mono" font-size="18" fill="#c9d1d9">Software Engineer | Python &amp; Java | Back-End, Artificial Intelligence &amp; Machine Learning</text>
   <text x="40" y="202" class="mono" font-size="18" fill="#8b949e">victhor@debian:~$ <tspan class="cursor" fill="#ffffff">█</tspan></text>
 </svg>
