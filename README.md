@@ -26,9 +26,8 @@ I'm a computing enthusiast focused on the advanced side of Software Engineering:
 - 🧩 Architecture: **microservices**, **event-driven microservices** and **hexagonal architecture**
 - ⚙️ Delivery: **CI/CD**, **Infrastructure as Code**, automated pipelines with **GitHub Actions**
 - 🧪 Quality: **Clean Code**, **SOLID**, unit, integration and **E2E tests** running before anything reaches `main`
-- 📈 Scale: **horizontal vs. vertical scaling**, **load balancing**, and when each one is the right call
-- 🤝 **Open to opportunities** in **AI Engineering**, Back-End, Cloud and DevOps
-
+- 🤝 **Open to opportunities** in **AI Engineering** and **Back-End**
+  
 ---
 
 ## `$ ./now-building.sh`
