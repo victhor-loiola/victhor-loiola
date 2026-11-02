@@ -117,7 +117,7 @@ flowchart LR
 
 <img height="170" src="https://streak-stats.demolab.com?user=victhor-loiola&hide_border=true&border_radius=12&background=0D1117&ring=E53935&fire=E53935&currStreakLabel=E53935&sideLabels=E6EDF3&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E&stroke=30363D" alt="GitHub streak"/>
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=victhor-loiola&bg_color=0D1117&color=E6EDF3&title_color=E6EDF3&line=E53935&point=FFFFFF&area=true&area_color=E53935&hide_border=true&radius=12&custom_title=Contributions%20in%20the%20last%2031%20days" alt="Contribution graph"/>
+<img width="100%" src="https://raw.githubusercontent.com/victhor-loiola/victhor-loiola/output/activity-graph.svg" alt="Contribution graph"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/victhor-loiola/victhor-loiola/output/snake-dark.svg"/>
