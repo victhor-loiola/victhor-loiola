@@ -1,4 +1,4 @@
-name: Generate snake
+name: Generate profile graphics
 
 on:
   schedule:
@@ -15,6 +15,74 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - name: Generate the contribution graph
+        uses: actions/github-script@v7
+        with:
+          script: |
+            function renderGraph(days) {
+              const W = 1000, H = 340;
+              const L = 64, R = 32, T = 86, B = 56;
+              const pw = W - L - R, ph = H - T - B;
+              const counts = days.map(d => d.contributionCount);
+              const total = counts.reduce((a, b) => a + b, 0);
+              const top = Math.max(4, Math.ceil(Math.max(...counts) / 4) * 4);
+              const x = i => L + (i * pw) / (days.length - 1);
+              const y = v => T + ph - (v * ph) / top;
+              const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+              const label = d => { const [, m, dd] = d.split('-'); return months[+m - 1] + ' ' + (+dd); };
+
+              const pts = days.map((d, i) => [x(i), y(d.contributionCount)]);
+              const line = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+              const area = line + ' L' + x(days.length - 1).toFixed(1) + ' ' + y(0) + ' L' + L + ' ' + y(0) + ' Z';
+
+              let grid = '';
+              for (let k = 0; k <= 4; k++) {
+                const v = (top / 4) * k, yy = y(v).toFixed(1);
+                grid += '<line x1="' + L + '" y1="' + yy + '" x2="' + (W - R) + '" y2="' + yy + '" stroke="#21262D"' + (k ? ' stroke-dasharray="4 6"' : '') + '/>';
+                grid += '<text x="' + (L - 14) + '" y="' + (+yy + 4) + '" text-anchor="end">' + v + '</text>';
+              }
+
+              let xl = '';
+              const last = days.length - 1;
+              days.forEach((d, i) => {
+                if (i % 5 === 0 || (i === last && last % 5 >= 3)) {
+                  xl += '<text x="' + x(i).toFixed(1) + '" y="' + (H - B + 26) + '" text-anchor="middle">' + label(d.date) + '</text>';
+                }
+              });
+
+              const dots = pts.map((p, i) =>
+                '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="' + (counts[i] ? 4 : 2.5) + '" fill="' + (counts[i] ? '#FFFFFF' : '#30363D') + '" stroke="#E53935" stroke-width="' + (counts[i] ? 2 : 0) + '"/>'
+              ).join('');
+
+              const sans = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+              const mono = "'JetBrains Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace";
+
+              return '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Contributions in the last ' + days.length + ' days">'
+                + '<defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">'
+                + '<stop offset="0" stop-color="#E53935" stop-opacity="0.45"/><stop offset="1" stop-color="#E53935" stop-opacity="0"/>'
+                + '</linearGradient></defs>'
+                + '<rect x="0.5" y="0.5" width="' + (W - 1) + '" height="' + (H - 1) + '" rx="12" fill="#0D1117" stroke="#21262D"/>'
+                + '<rect x="32" y="34" width="22" height="3" fill="#E53935"/>'
+                + '<text x="64" y="41" font-family="' + mono + '" font-size="13" font-weight="600" letter-spacing="2.5" fill="#E53935">CONTRIBUTIONS · LAST ' + days.length + ' DAYS</text>'
+                + '<text x="' + (W - 32) + '" y="44" text-anchor="end" font-family="' + sans + '" font-size="26" font-weight="800" fill="#FFFFFF">' + total + '<tspan dx="8" font-size="14" font-weight="500" fill="#8B949E">contributions</tspan></text>'
+                + '<g font-family="' + mono + '" font-size="12" fill="#8B949E">' + grid + xl + '</g>'
+                + '<path d="' + area + '" fill="url(#fill)"/>'
+                + '<path d="' + line + '" fill="none" stroke="#E53935" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'
+                + dots
+                + '</svg>';
+            }
+
+            const fs = require('fs');
+            const result = await github.graphql(
+              'query($login: String!) { user(login: $login) { contributionsCollection { contributionCalendar { weeks { contributionDays { date contributionCount } } } } } }',
+              { login: context.repo.owner }
+            );
+            const days = result.user.contributionsCollection.contributionCalendar.weeks
+              .flatMap(w => w.contributionDays)
+              .slice(-31);
+            fs.mkdirSync('dist', { recursive: true });
+            fs.writeFileSync('dist/activity-graph.svg', renderGraph(days));
+
       - name: Generate the snake SVGs
         uses: Platane/snk@v3
         with:
@@ -30,4 +98,3 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
