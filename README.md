@@ -18,6 +18,13 @@
 
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
+<div align="center">
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyY3VtZ2UxaHVrbnh5YjUwZzBvMW5kcmdweXQwcjJua2xjbGtpdzBsYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CchzkJJ6UrQmQ/giphy.gif" width="420" alt="GIF"/>
+</div>
+
+<img src="./assets/divider.svg" width="100%" alt=""/>
+
+
 ## 01 · About me
 
 I'm a **Software Engineering student at PUC Minas** building back-end systems with **Java** and **Spring Boot**: REST APIs, PostgreSQL databases with versioned migrations, authentication with Spring Security and communication between services with RabbitMQ. Each project documents its decisions and trade-offs, not just the code.
