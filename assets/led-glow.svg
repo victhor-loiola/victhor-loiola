@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 70" width="1200" height="70">
+  <defs>
+    <linearGradient id="fade" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#8B0F14" stop-opacity="0"/>
+      <stop offset="0.12" stop-color="#B3151B" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#E53935" stop-opacity="1"/>
+      <stop offset="0.88" stop-color="#B3151B" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8B0F14" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blurWide" x="-20%" y="-300%" width="140%" height="700%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="blurSoft" x="-20%" y="-300%" width="140%" height="700%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+  <rect x="60" y="29" width="1080" height="12" rx="6" fill="url(#fade)" filter="url(#blurWide)" opacity="0.85">
+    <animate attributeName="opacity" values="0.65;0.95;0.65" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="100" y="32" width="1000" height="6" rx="3" fill="url(#fade)" filter="url(#blurSoft)"/>
+  <rect x="140" y="33.5" width="920" height="3" rx="1.5" fill="url(#fade)"/>
+</svg>
