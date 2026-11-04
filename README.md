@@ -19,7 +19,9 @@
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
 <div align="center">
-  <img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyY3VtZ2UxaHVrbnh5YjUwZzBvMW5kcmdweXQwcjJua2xjbGtpdzBsYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CchzkJJ6UrQmQ/giphy.gif" width="420" alt="GIF"/>
+  <img src="./assets/led-glow.svg" width="100%" alt=""/>
+  <img src="LINK_DO_SEU_GIF" width="420" alt="GIF"/>
+  <img src="./assets/led-glow.svg" width="100%" alt=""/>
 </div>
 
 <img src="./assets/divider.svg" width="100%" alt=""/>
